@@ -11,11 +11,13 @@ class TCPServer:
 
     def start(self):
         
-        print("[Mini] Starting Mini webserver .....")
+        print("[Mini] Initializing a webserver .....")
+        print("[Mini] Creating a socket for enabling communication.")
         web_server = socket(AF_INET , SOCK_STREAM)
-        print("[Mini] Socket created for Mini web server.")
+        print("[Mini] Socket created for webserver.")
+        print("[Mini] Assigning Host address and a Port number for webserver.")
         web_server.bind((self.host , self.port))
-        print("[Mini] Assigned Host and Port for Mini webserver.")
+        print("[Mini] Assigned Host address and a Port for webserver.")
         print("[Mini] Server can Listen for 10 active connections at a time.")
         web_server.listen(10)
         print(f"[Mini] Server Started at {self.host}:{self.port}")
