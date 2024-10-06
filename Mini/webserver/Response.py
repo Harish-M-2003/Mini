@@ -7,7 +7,7 @@ class Response:
     def set_status_code(self , status_code):
         self.__status_code = status_code
     
-    def get_status_code(self , status_code):
+    def get_status_code(self):
         return self.__status_code
 
     def send(self , data):

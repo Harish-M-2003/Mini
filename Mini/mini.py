@@ -1,10 +1,11 @@
 from webserver import server
 from webserver.Response import Response
+import datetime
 
 
 class Mini:
 
-    def __init__(self, host="0.0.0.0", port=54321):
+    def __init__(self, host="127.0.0.1", port=54321):
 
         self.server = server.TCPServer(host, port).start()
         self.end_points = {}
@@ -23,6 +24,8 @@ class Mini:
         request = request.decode("utf-8").split("\n")
         response = Response()
         request_details = request[0].split()
+
+        print(f"[Mini] {request_details[0]}" , request_details[1] , "at" , datetime.datetime.now())
 
         if request_details[0] == "GET":
             end_point = self.end_points.get(request_details[1], None)
